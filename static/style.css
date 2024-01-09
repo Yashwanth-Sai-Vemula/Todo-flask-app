@@ -1,0 +1,62 @@
+body{
+    background-image: url(shea-rouda-Ete0zMKPWys-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-class h1{
+    font-family: 'Poppins', sans-serif;
+    font-size: x-large;
+}
+.text-input{
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    position: relative;
+}
+button{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-left: 3px;
+}
+button:hover{
+    background-color: blueviolet;
+    color: white;
+}
+.list-items-div{
+    display: flex;
+    flex-direction: column;
+    margin-left: -90px;
+}
+.todo-list li{
+    list-style: none;
+    padding: 3px;
+    font-family: 'Roboto Mono', monospace;;
+}
+.checkbox-input{
+    margin-bottom: 0px;
+}
+span{
+    margin-right: 50px;
+}
+a{
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+a:hover{
+    background-color: blueviolet;
+    color: white;
+}

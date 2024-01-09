@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="heading-class">
+            <h1 class="Heading">Todo List</h1>
+        </div>
+        <div class="input-form">
+            <form action="/add" method="post">
+                <input class="text-input" type="text" name="task" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+        <div class="todo-list">
+            <ul>
+                <div class="list-items-div">
+                {%for todo in todos %}
+                    <li>
+                        <input class="checkbox-input" type="checkbox" {% if todo.completed %}checked{% endif %} onchange="toggleTask('{{ todo.id }}')">
+                        <span {% if todo.completed %}style="text-decoration: line-through;"{% endif %}>{{ todo.task }}</span>
+                        <a href="{{ url_for('delete', id=todo.id) }}">Delete</a>
+                    </li>
+                {% endfor %}
+                </div>
+            </ul>
+        </div>
+        
+    </div>
+    <script>
+        function toggleTask(id) {
+            window.location.href = '/toggle/' + id ;
+        }
+    </script>
+</body>
+</html>
